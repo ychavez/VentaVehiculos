@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Forms;
 
-namespace VentaVehiculos
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace VentaVehiculos.Views
 {
-    public partial class MainPage : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class FavoriteCars : ContentPage
     {
-        public MainPage()
+        public FavoriteCars()
         {
             InitializeComponent();
         }
