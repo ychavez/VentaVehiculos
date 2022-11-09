@@ -7,6 +7,8 @@
         public string Model { get; set; }
         public decimal Price { get; set; }
         public string Description { get; set; }
-        public string PhotoUrl { get; set; } 
+        public string PhotoUrl { get; set; }
+        public double? Lat { get; set; }
+        public double? Lon { get; set; }
     }
 }

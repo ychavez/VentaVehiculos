@@ -1,4 +1,6 @@
-﻿using System;
+﻿//using Plugin.Geolocator;
+using Plugin.Geolocator;
+using System;
 using VentaVehiculos.Context;
 using VentaVehiculos.Models;
 using Xamarin.Forms;
@@ -16,6 +18,11 @@ namespace VentaVehiculos.Views
 
         private async void btnAgregar_Clicked(object sender, EventArgs e)
         {
+            var locator = CrossGeolocator.Current;
+            locator.DesiredAccuracy = 100;
+
+            var position = await locator.GetPositionAsync();
+
             var carsRepo = new CarsRepo();
             await carsRepo.AddCar(new Car()
             {
@@ -23,7 +30,9 @@ namespace VentaVehiculos.Views
                 Brand = txtMarca.Text,
                 Description = txtDescripcion.Text,
                 Price = decimal.Parse(txtPrecio.Text),
-                PhotoUrl = "https://i.pinimg.com/236x/5a/19/93/5a19936163f821c1c53a197775b9bd64.jpg"
+                PhotoUrl = "https://i.pinimg.com/236x/5a/19/93/5a19936163f821c1c53a197775b9bd64.jpg",
+                Lat = position.Latitude,
+                Lon = position.Longitude
             });
 
             await DisplayAlert("Agregado", "El vehiculo se agrego correctamente","Aceptar");
@@ -34,3 +43,4 @@ namespace VentaVehiculos.Views
         }
     }
 }
+

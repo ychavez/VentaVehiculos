@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VentaVehiculos.Android", "V
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VentaVehiculos.iOS", "VentaVehiculos\VentaVehiculos.iOS\VentaVehiculos.iOS.csproj", "{9DF72A8D-A74A-4193-94AB-63E1A927D851}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VentaVehiculos", "VentaVehiculos\VentaVehiculos\VentaVehiculos.csproj", "{DC01F178-4526-41F9-86F5-1478EABD2606}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VentaVehiculos", "VentaVehiculos\VentaVehiculos\VentaVehiculos.csproj", "{DC01F178-4526-41F9-86F5-1478EABD2606}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
