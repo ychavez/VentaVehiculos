@@ -4,9 +4,18 @@
              x:Class="VentaVehiculos.Views.AddCar">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Frame>
+                <Image/>
+            </Frame>
+
+            <Entry Placeholder="Modelo" x:Name="txtmodelo" Keyboard="Default" />
+            <Entry Placeholder="Marca" x:Name="txtMarca" Keyboard="Default" />
+            <Entry Placeholder="Año" x:Name="txtAnio" Keyboard="Numeric" />
+            <Entry Placeholder="Descripcion" x:Name="txtDescripcion" Keyboard="Chat" />
+            <Entry Placeholder="Precio" x:Name="txtPrecio" Keyboard="Numeric" />
+
+            <Button Text="Agregar" x:Name="btnAgregar" Clicked="btnAgregar_Clicked"/>
+            <Button Text="Tomar Foto" x:Name="btnFoto"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

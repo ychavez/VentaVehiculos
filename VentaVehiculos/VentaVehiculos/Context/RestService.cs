@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace VentaVehiculos.Context
@@ -19,8 +20,8 @@ namespace VentaVehiculos.Context
             _client.BaseAddress = _UrlBase;
         }
 
-        
-        public async Task<List<T>> GetDataAsync<T>(string url) 
+
+        public async Task<List<T>> GetDataAsync<T>(string url)
         {
             List<T> TData = null;
 
@@ -41,5 +42,29 @@ namespace VentaVehiculos.Context
 
             return TData;
         }
+
+
+        public async Task<string> PostAsync<T>(T data, string url)
+        {
+            var json = JsonConvert.SerializeObject(data);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var response = await _client.PostAsync(url, content);
+
+            if (!response.IsSuccessStatusCode)
+                throw new Exception(await response.Content.ReadAsStringAsync());
+
+            return await response.Content.ReadAsStringAsync();
+
+
+        }
+
+
+
+
     }
+
+
+
 }
+
+

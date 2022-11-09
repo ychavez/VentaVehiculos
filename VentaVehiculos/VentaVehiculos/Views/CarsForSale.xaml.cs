@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using VentaVehiculos.Context;
 using VentaVehiculos.Models;
 using Xamarin.Forms;
@@ -14,14 +15,17 @@ namespace VentaVehiculos.Views
         public CarsForSale()
         {
             InitializeComponent();
-   
+            MessagingCenter.Subscribe<Page>(this, "CarAdded", async o => await InitControls());
             
+        }
+
+        private async Task InitControls() {
+            CarsListView.ItemsSource = await new CarsRepo().GetCars();
         }
 
         protected override async void OnAppearing()
         {
-            CarsListView.ItemsSource = await new CarsRepo().GetCars();
-
+            await InitControls();
             base.OnAppearing();
         }
         private async void ToolbarItem_Clicked(object sender, EventArgs e)

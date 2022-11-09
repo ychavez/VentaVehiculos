@@ -17,6 +17,9 @@ namespace VentaVehiculos.Context
         public async Task<List<Car>> GetCars()
             => await _RestService.GetDataAsync<Car>("carsForSalesApi");
 
+        public async Task AddCar(Car car) 
+            => await _RestService.PostAsync(car, "carsForSalesApi");
+
 
     }
 }

@@ -16,13 +16,16 @@
 
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="1.2*"/>
+                                    <ColumnDefinition Width=".9*"/>
                                     <ColumnDefinition Width="2*"/>
                                     <ColumnDefinition Width=".8*"/>
 
                                 </Grid.ColumnDefinitions>
-
-                                <Image Source="{Binding PhotoUrl}" Grid.Column="0"/>
+                                <Frame  Grid.Column="0" CornerRadius="7" Padding="0" HasShadow="True"
+                                        
+                                        HeightRequest="100" WidthRequest="200">
+                                   <Image Source="{Binding PhotoUrl}"/>
+                                </Frame>
 
                                 <StackLayout Grid.Column="1">
                                     
