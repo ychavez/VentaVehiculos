@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using VentaVehiculos.Context;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,6 +10,20 @@ namespace VentaVehiculos.Views
         public FavoriteCars()
         {
             InitializeComponent();
+            LoadData();
         }
+
+        private void LoadData() 
+        {
+            CarsListView.ItemsSource = null;
+            CarsListView.ItemsSource = new DatabaseManager().GetFavoriteCars();     
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            LoadData();
+        }
+
     }
 }

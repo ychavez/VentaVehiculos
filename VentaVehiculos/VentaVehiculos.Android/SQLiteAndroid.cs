@@ -8,9 +8,9 @@ using Xamarin.Forms;
 [assembly: Dependency(typeof(SQLiteAndroid))]
 namespace VentaVehiculos.Droid
 {
-    public class SQLiteAndroid: ISQLite
+    public class SQLiteAndroid : ISQLite
     {
-        public SQLiteConnection GetConnection() 
+        public SQLiteConnection GetConnection()
         {
             /// declaramos el nombre del archivo de base de datos
             string sqlFileName = "Cars.db3";

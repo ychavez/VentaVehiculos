@@ -5,9 +5,41 @@
              x:Class="VentaVehiculos.Views.FavoriteCars">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ListView x:Name="CarsListView" RowHeight="100">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width=".9*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width=".8*"/>
+
+                                </Grid.ColumnDefinitions>
+                                <Frame  Grid.Column="0" CornerRadius="7" Padding="0" HasShadow="True"
+                                        
+                                        HeightRequest="100" WidthRequest="200">
+                                    <Image Source="{Binding PhotoUrl}"/>
+                                </Frame>
+
+                                <StackLayout Grid.Column="1">
+
+                                    <Label Text="{Binding Description}"/>
+                                    <Label Text="{Binding Price}"/>
+                                    <Label Text="{Binding Brand}"/>
+
+                                </StackLayout>
+                             
+
+
+
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
