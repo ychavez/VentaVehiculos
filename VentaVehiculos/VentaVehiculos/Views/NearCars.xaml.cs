@@ -71,3 +71,17 @@ namespace VentaVehiculos.Views
         }
     }
 }
+
+/*
+ * 
+ * 
+ * 
+ * en el proyecto de PokeDex en la lista de pokemons queremos agregarle un boton que se llame ubicar en el mapa
+ * al dar click en este boton nos va a abrir un una nueva pantalla (push) que contendra un mapa con un 
+ * pin con una ubicacion random y el pin tiene el nombre del pokemon
+ * 
+ * 15 puntos :D
+ * 
+ * -90 to 90 for latitude and -180 to 180 
+ * 
+ * */
