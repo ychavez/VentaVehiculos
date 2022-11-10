@@ -5,9 +5,8 @@
              x:Class="VentaVehiculos.Views.NearCars">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ActivityIndicator IsVisible="True" IsRunning="True" x:Name="AIndicator"/>
+            <Label x:Name="waitText" Text="Cargando Mapa..." HorizontalOptions="Center"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
