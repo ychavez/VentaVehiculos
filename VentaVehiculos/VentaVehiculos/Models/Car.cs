@@ -1,7 +1,10 @@
-﻿namespace VentaVehiculos.Models
+﻿using SQLite;
+
+namespace VentaVehiculos.Models
 {
     public class Car
     {
+        [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string Brand { get; set; }
         public string Model { get; set; }

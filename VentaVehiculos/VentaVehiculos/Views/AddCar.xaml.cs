@@ -41,6 +41,23 @@ namespace VentaVehiculos.Views
 
             await Navigation.PopAsync();
         }
+
+        private async void btnFoto_Clicked(object sender, EventArgs e)
+        {
+            if (Plugin.Media.CrossMedia.Current.IsCameraAvailable && Plugin.Media.CrossMedia.Current.IsTakePhotoSupported)
+            {
+                var photo = await Plugin.Media.CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+                {
+                    SaveToAlbum = true,
+                    SaveMetaData = false
+                });
+
+                if (photo != null)
+                {
+                    img.Source = ImageSource.FromStream(() => photo.GetStream());
+                }
+            }
+        }
     }
 }
 
