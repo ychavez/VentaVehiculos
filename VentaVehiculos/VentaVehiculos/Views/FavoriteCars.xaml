@@ -25,9 +25,9 @@
 
                                 <StackLayout Grid.Column="1">
 
-                                    <Label Text="{Binding Description}"/>
-                                    <Label Text="{Binding Price}"/>
-                                    <Label Text="{Binding Brand}"/>
+                                    <Label Text="{Binding Description}"  />
+                                    <Label Text="{Binding Price}"  />
+                                    <Label Text="{Binding Brand}" />
 
                                 </StackLayout>
                              

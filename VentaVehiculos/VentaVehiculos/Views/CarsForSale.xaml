@@ -6,6 +6,30 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Agregar" Clicked="ToolbarItem_Clicked"></ToolbarItem>
     </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="labelStyle" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="TextColor" Value="Green"/>
+                <Setter Property="BackgroundColor" Value="#f2f"/>
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="Red"/>
+            </Style>
+
+
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Blue"/>
+                <Setter Property="BorderColor" Value="Red"/>
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+
+        </ResourceDictionary>
+        
+    </ContentPage.Resources>
+    
     <ContentPage.Content>
         <StackLayout>
 
@@ -28,15 +52,15 @@
                                 </Frame>
 
                                 <StackLayout Grid.Column="1">
-                                    
-                                    <Label Text="{Binding Description}"/>
-                                    <Label Text="{Binding Price}"/>
-                                    <Label Text="{Binding Brand}"/>
-                              
-                                </StackLayout>
-                                <Button Text="Favorito" Clicked="Button_Clicked" Grid.Column="2"/>
 
-                        
+                                    <Label Text="{Binding Description}"  Style="{StaticResource labelStyle }" TextColor="AliceBlue"/>
+                                    <Label Text="{Binding Price}" />
+                                    <Label Text="{Binding Brand}"  Style="{StaticResource labelStyle }" />
+                              
+                                <Button Text="Favorito" Clicked="Button_Clicked" Grid.Column="2"/>
+                                </StackLayout>
+                                <ImageButton Source="heart.png"  BackgroundColor="White" WidthRequest="10"  Clicked="Button_Clicked" Grid.Column="2"/>
+
 
 
                             </Grid>

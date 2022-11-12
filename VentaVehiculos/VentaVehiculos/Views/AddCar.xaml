@@ -4,7 +4,9 @@
              x:Class="VentaVehiculos.Views.AddCar">
     <ContentPage.Content>
         <StackLayout>
-            <Frame HeightRequest="200" WidthRequest="200" HorizontalOptions="Center">
+            
+
+                <Frame HeightRequest="200" WidthRequest="200" HorizontalOptions="Center">
                 <Image HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" x:Name="img"/>
             </Frame>
 
@@ -14,8 +16,8 @@
             <Entry Placeholder="Descripcion" x:Name="txtDescripcion" Keyboard="Chat" />
             <Entry Placeholder="Precio" x:Name="txtPrecio" Keyboard="Numeric" />
 
-            <Button Text="Agregar" x:Name="btnAgregar" Clicked="btnAgregar_Clicked"/>
-            <Button Text="Tomar Foto" x:Name="btnFoto" Clicked="btnFoto_Clicked"/>
+            <Button Text="Agregar" x:Name="btnAgregar" Clicked="btnAgregar_Clicked" />
+            <Button Text="Tomar Foto" x:Name="btnFoto" Clicked="btnFoto_Clicked" Style="{StaticResource bottonGlobal}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

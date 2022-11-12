@@ -35,7 +35,7 @@ namespace VentaVehiculos.Views
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            DisplayAlert("Auto Favorito",  new DatabaseManager().AddFavoriteCar((Car)((Button)sender).BindingContext)?
+            DisplayAlert("Auto Favorito",  new DatabaseManager().AddFavoriteCar((Car)((ImageButton)sender).BindingContext)?
                 "Auto favorito agregado correctamente":"El auto ya se encuentra en favoritos" , "Ok");
         }
     }
